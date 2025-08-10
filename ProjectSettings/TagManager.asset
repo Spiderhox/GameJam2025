@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - NPC
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - NPC
+  - Solidos
   - 
   - 
   - 
@@ -41,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BACKGROUND
+    uniqueID: 521449705
+    locked: 0
+  - name: SOMBRAS
+    uniqueID: 1880852525
+    locked: 0
+  - name: GAMEPLAY
+    uniqueID: 3991930891
+    locked: 0
+  - name: DECORATIONS
+    uniqueID: 1031362365
     locked: 0

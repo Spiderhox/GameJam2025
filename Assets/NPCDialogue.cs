@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 
 public class NPCDialogue : MonoBehaviour
@@ -13,6 +14,7 @@ public class NPCDialogue : MonoBehaviour
     public string[] dialogueLines;
 
     private int currentLine = 0;
+    public event Action OnCompleteDialogue;
 
     public void StartDialogue()
     {
@@ -35,7 +37,15 @@ public class NPCDialogue : MonoBehaviour
 
     public void EndDialogue()
     {
-        Dialogo.SetActive(false);
+        if (Dialogo != null)
+        {
+            Dialogo.SetActive(false);
+        }
+        
+        if (currentLine >= dialogueLines.Length) 
+        {
+            OnCompleteDialogue?.Invoke();
+        }
         currentLine = 0;
     }
 
