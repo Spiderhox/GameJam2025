@@ -7,10 +7,12 @@ public class InteractionPlayer : MonoBehaviour
     //public KeyCode interactKey = KeyCode.Space;
     private NPCDialogue currentNPC;
     private Animator animator;
+    
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        
     }
 
     void Update()

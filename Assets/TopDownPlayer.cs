@@ -5,7 +5,6 @@ using System;
 using TMPro;
 using System.Runtime.CompilerServices;
 using UnityEngine.SceneManagement;
-using UnityEditor.Experimental.GraphView;
 
 
 public class TopDownPlayer : MonoBehaviour
@@ -27,7 +26,7 @@ public class TopDownPlayer : MonoBehaviour
 
 
     private SpriteRenderer spriteRenderer;
-    private BoxCollider2D JugadorCollider;
+    private CapsuleCollider2D JugadorCollider;
 
     public GameObject gameOverPanel;
 
@@ -46,7 +45,7 @@ public class TopDownPlayer : MonoBehaviour
         gameOverPanel.SetActive(false);
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        JugadorCollider = GetComponent<BoxCollider2D>();
+        JugadorCollider = GetComponent<CapsuleCollider2D>();
 
     }
 

@@ -5,31 +5,44 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    /*public GameObject player;
-    public Transform spawnPoint;
+    public List<DialogueQuest> DQuests = new List<DialogueQuest>();
+    public List<FetchQuest>   FQuests = new List<FetchQuest>();
 
-    private void OnEnable()
+    public GameObject WinPopUpPanel;
+
+
+    void Update()
     {
-        TopDownPlayer.CallPlayerDead += RevivirJugador;
+        if (CheckVictoryCondition())
+        {
+            WinGame();
+        }
     }
 
-    private void OnDisable()
+    bool CheckVictoryCondition()
     {
-        TopDownPlayer.CallPlayerDead -= RevivirJugador;
+        bool victory = true;
+       foreach (DialogueQuest quest in DQuests) 
+        {
+            if (!quest.completeQuest) 
+            { 
+                victory = false;
+            }
+        }
+       foreach (FetchQuest quest in FQuests) 
+        {
+            if (!quest.completeQuest) 
+            { 
+                victory = false;
+            }
+        }
+       return victory;
     }
 
-    private void RevivirJugador()
+    void WinGame()
     {
-        StartCoroutine(Reaparecer());
+        Debug.Log("yay");
+        WinPopUpPanel.SetActive(true);
     }
-
-    private IEnumerator Reaparecer()
-    {
-        yield return new WaitForSeconds(1f);
-        player.transform.position = spawnPoint.position;
-        player.SetActive(true);
-
-        player.GetComponent<TopDownPlayer>().ResetTargetPosition();
-    }*/
 
 }

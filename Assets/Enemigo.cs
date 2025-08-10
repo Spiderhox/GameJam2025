@@ -14,7 +14,7 @@ public class Enemigo : MonoBehaviour
 
     public Transform[] puntosPatrulla;
     public float velocidad = 2f;
-    public float visionRadio = 6f;//
+    public float visionRadio = 10f;//
     public LayerMask capaJugador;//
     public LayerMask capaObstaculos;//
     private Rigidbody2D rb; //

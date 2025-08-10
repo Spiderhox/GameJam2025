@@ -12,13 +12,21 @@ public class NPCDialogue : MonoBehaviour
     public TMPro.TextMeshProUGUI dialogueText;
     [TextArea(5, 10)]
     public string[] dialogueLines;
+    public AudioSource dialogo;
 
+    private void Start()
+    {
+         dialogo = GetComponent<AudioSource>();
+    }
+  
     private int currentLine = 0;
     public event Action OnCompleteDialogue;
 
     public void StartDialogue()
     {
         Dialogo.SetActive(true);
+        dialogo.loop = false;
+        dialogo.Play();
         dialogueText.text = dialogueLines[currentLine];
     }
 
@@ -45,8 +53,10 @@ public class NPCDialogue : MonoBehaviour
         if (currentLine >= dialogueLines.Length) 
         {
             OnCompleteDialogue?.Invoke();
+            dialogo.Stop();
         }
         currentLine = 0;
+       
     }
 
 }

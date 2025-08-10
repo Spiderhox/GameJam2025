@@ -42,5 +42,6 @@ public class DialogueQuest : MonoBehaviour
         if (!unlockDialogues) return;
         npcGiver.dialogueLines = aknowledgeDialogue;
         completeQuest = true;
+        
     }
 }
